@@ -1,0 +1,56 @@
+body {
+  background-color: #CEF9DC;
+  padding: 10px;
+}
+
+header {
+  margin-top: 30px;
+  margin-bottom: 50px;
+  margin-left: 50px;
+}
+
+/*パラメータの全てをfooterの固定に使用*/
+.footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.flex-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.sidebar {
+  margin-left: 50px;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  margin-bottom: 15px;
+}
+
+main {
+  margin-left: 50px;
+}
+
+section {
+  width: 60vw;
+  height: 100vh;
+}
+
+h1,h2,h3,h4,h5 {
+  margin-bottom: 15px;
+}
+
+section {
+  padding: 30px;  
+}
+
+footer {
+  margin-top: auto; /*footer固定*/
+  margin-left: 50px;
+}
