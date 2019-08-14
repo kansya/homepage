@@ -1,7 +1,5 @@
-<main>
-  <% @articles.each do |article| %>
-    <%= render partial: "article", locals: { article: article } %>
-  <% end %>
+<% @articles.each do |article| %>
+  <%= render partial: "article", locals: { article: article } %>
+<% end %>
 
-  <%= paginate(@articles) %>
-</main>
+<%= paginate(@articles) %>
