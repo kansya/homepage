@@ -1,0 +1,28 @@
+<ul>
+  <%= form_with model: @article do |f| %>
+    <li>
+      <%= f.label :title, "タイトル"%>
+      <%= f.text_field :title %>
+    </li>
+
+    <li>
+      <%= f.label :category, "カテゴリー" %>
+      <%= f.text_field :category %>
+    </li>
+
+    <li>
+      <%= f.label :state, "記事の状態"%>
+      <%= f.radio_button :state, 0  %>作成中
+      <%= f.radio_button :state, 1 %>完了
+    </li>
+
+    <li>
+      <%= f.label :article, "本文"%>
+      <%= f.text_area :article %>
+    </li>
+
+    <li>
+      <%= f.submit "更新する" %>
+    </li>
+  <% end %>
+</ul>

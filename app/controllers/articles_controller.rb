@@ -21,6 +21,18 @@ class ArticlesController < ApplicationController
     redirect_to articles_path
   end
 
+  def edit
+    @article = Article.find(params[:id])
+  end
+
+  def update
+    article = Article.find(params[:id])
+    if article.user_id == current_user.id
+      article.update(create_params)
+    end
+    redirect_to articles_path
+  end
+
   private
   def create_params
     params.require(:article).permit(:title, :category, :state, :article).merge(user_id: current_user.id)
