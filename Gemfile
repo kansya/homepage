@@ -55,3 +55,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #ユーザーログイン機能をつけるためDeviseをインストール
 gem 'devise'
+
+#ページネーション機能をインストール
+gem 'kaminari'

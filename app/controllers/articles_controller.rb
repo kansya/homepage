@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   def index
-    @articles = Article.includes(:user).order("created_at DESC")
+    @articles = Article.includes(:user).page(params[:page]).per(5).order("created_at DESC")
   end
 
   def new
@@ -10,6 +10,14 @@ class ArticlesController < ApplicationController
   def create
     #binding.pry
     Article.create(create_params)
+    redirect_to articles_path
+  end
+
+  def destroy
+    article = Article.find(params[:id]);
+    if article.user_id == current_user.id
+      article.destroy
+    end
     redirect_to articles_path
   end
 
