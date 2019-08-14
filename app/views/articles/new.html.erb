@@ -12,8 +12,8 @@
 
     <li>
       <%= f.label :state, "記事の状態"%>
-      <%= f.radio_button :state, "作成中"  %>作成中
-      <%= f.radio_button :state, "完了" %>完了
+      <%= f.radio_button :state, 0  %>作成中
+      <%= f.radio_button :state, 1 %>完了
     </li>
 
     <li>
@@ -22,7 +22,7 @@
     </li>
 
     <li>
-      <%= f.submit "Send" %>
+      <%= f.submit "投稿する" %>
     </li>
   <% end %>
 </ul>

@@ -8,12 +8,13 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    binding.pry
+    #binding.pry
     Article.create(create_params)
+    redirect_to articles_path
   end
 
   private
   def create_params
-    params.permit(:title, :category, :state, :article).merge(author: current_user.id)
+    params.require(:article).permit(:title, :category, :state, :article).merge(user_id: current_user.id)
   end
 end
