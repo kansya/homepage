@@ -37,17 +37,10 @@
     </nav>
 
     <main>
-      <article>
-        <h4>更新日時：</h4>
-        <h1>タイトル：</h1>
-        <h3>カテゴリー：</h3>
-        <h4>書いた人：</h4>
-        <h4>記事の状態：</h4>
-        <section>
-          マークダウンで記事を書けるようにします。
-          調整中になります。
-        </section>
-      </article>
+      <% @articles.each do |article| %>
+        <%= render partial: "article", locals: { article: article } %>
+      <% end %>
+
       <%= paginate(@articles) %>
     </main>
   </div>
