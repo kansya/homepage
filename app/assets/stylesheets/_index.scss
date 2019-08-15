@@ -1,5 +1,4 @@
 body {
-  background-color: #CEF9DC;
   padding: 10px;
 }
 
@@ -31,26 +30,36 @@ ul {
 
 li {
   margin-bottom: 15px;
+  border-bottom:1px solid #ddd;
+
 }
 
 main {
   margin-left: 50px;
 }
 
+article {
+  margin-bottom: 100px; 
+}
+
 section {
-  width: 60vw;
+  width: 75vw;
   height: 100vh;
-}
-
-h1,h2,h3,h4,h5 {
-  margin-bottom: 15px;
-}
-
-section {
-  padding: 30px;  
+  padding: 20px;
+  border: 1px solid #ddd;
 }
 
 footer {
   margin-top: auto; /*footer固定*/
   margin-left: 50px;
+}
+
+a {
+text-decoration: none;
+}
+a:hover {
+text-decoration: underline;
+}
+a:visited {
+color:#0000ff;
 }

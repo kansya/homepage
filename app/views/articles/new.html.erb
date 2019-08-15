@@ -1,24 +1,24 @@
 <ul>
   <%= form_with model: @article do |f| %>
     <li>
-      <%= f.label :title, "タイトル"%>
-      <%= f.text_field :title %>
+      <%= f.label :title, "タイトル："%>
+      <%= f.text_field :title, :size => "90" %>
     </li>
 
     <li>
-      <%= f.label :category, "カテゴリー" %>
-      <%= f.text_field :category %>
+      <%= f.label :category, "カテゴリー：" %>
+      <%= f.text_field :category, :size => "90" %>
     </li>
 
     <li>
-      <%= f.label :state, "記事の状態"%>
+      <%= f.label :state, "記事の状態："%>
       <%= f.radio_button :state, 0  %>作成中
       <%= f.radio_button :state, 1 %>完了
     </li>
 
+      <%= f.label :article, "本文："%>
     <li>
-      <%= f.label :article, "本文"%>
-      <%= f.text_area :article %>
+      <%= f.text_area :article, :size => "100x35" %>
     </li>
 
     <li>

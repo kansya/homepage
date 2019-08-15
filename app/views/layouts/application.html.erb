@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>神奈川デバッカーの仕様書</title>
+    <title>suzuki05 homepage</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,20 +10,22 @@
 
   <body>
     <header>
-      <h1>神奈川デバッカーの仕様書</h1>
-      <h2>wikiっぽく、ちょっとずつプログラミングについて書くよ</h2>
-      <h3>組み込みシステム/C/C++/Linuxが中心</h3>
+      <%= link_to(articles_path) do %>
+        <h1>suzuki05 homepage</h1>
+      <% end %>
+      <h3>組み込みシステム/C/C++/Linuxのiroha</h3>
     </header>
 
     <div class="footer-wrapper">
       <div class=flex-wrapper>
         <nav class="sidebar">
           <ul>
-            <li>トップページ</li>
+            <%= link_to(articles_path) do %>
+              <li>トップページ</li>
+            <% end %>
             <li>記事一覧(カテゴリ別)</li>
-            <li>更新履歴</li>
+            <li>更新履歴一覧</li>
             <li>サイト内検索</li>
-            <li>スクレイピング結果</li>
             <li>管理人プロフィール</li>
 
             <% if user_signed_in? %>
@@ -53,7 +55,7 @@
 
       </div>
       <footer>
-        (c) 2019/08/11 神奈川デバッカー
+        (c) 2019 suzuki05 homepage
       </footer>
     </div>
   </body>

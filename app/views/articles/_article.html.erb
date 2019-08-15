@@ -1,14 +1,16 @@
 <article>
-  <h4>更新日時：<%= article.created_at.strftime('%Y年%-m月%-d日 %-H時%-M分%-S秒') %></h4>
-  <h1>タイトル：<%= article.title %></h1>
-  <h3>カテゴリー：<%= article.category %></h3>
-  <h4>書いた人：<%= article.user.nickname %></h4>
-  <h4>記事の状態：<%= article.state %></h4>
-  <h4><%= link_to '詳細', "/articles/#{article.id}" %>
-  <% if user_signed_in? && current_user.id == article.user_id %>
-    <h4><%= link_to '編集', "/articles/#{article.id}/edit" %>
-    <h4><%= link_to '削除', "/articles/#{article.id}", method: :delete %></h4>
-  <% end %>
+  <ul>
+    <li><h4>タイトル： <%= article.title %></h4></li>
+    <li>更新日時：<%= article.created_at.strftime('%Y年%-m月%-d日 %-H時%-M分%-S秒') %></li>
+    <li>カテゴリー：<%= article.category %></li>
+    <li>書いた人：<%= article.user.nickname %></li>
+    <li>記事の状態：<%= article.state %></li>
+    <li><%= link_to '詳細', "/articles/#{article.id}" %></li>
+    <% if user_signed_in? && current_user.id == article.user_id %>
+      <li><%= link_to '編集', "/articles/#{article.id}/edit" %></li>
+      <li><%= link_to '削除', "/articles/#{article.id}", method: :delete %></li>
+    <% end %>
+  </ul>
   <section>
     <%= article.article %>
   </section>

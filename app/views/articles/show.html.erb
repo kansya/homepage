@@ -1,33 +1,37 @@
 <article>
-  <h4>更新日時：<%= @article.created_at.strftime('%Y年%-m月%-d日 %-H時%-M分%-S秒') %></h4>
-  <h1>タイトル：<%= @article.title %></h1>
-  <h3>カテゴリー：<%= @article.category %></h3>
-  <h4>書いた人：<%= @article.user.nickname %></h4>
-  <h4>記事の状態：<%= @article.state %></h4>
-  <% if user_signed_in? && current_user.id == @article.user_id %>
-    <h4><%= link_to '編集', "/articles/#{@article.id}/edit" %>
-    <h4><%= link_to '削除', "/articles/#{@article.id}", method: :delete %></h4>
-  <% end %>
+  <ul>
+    <li><h4>タイトル：<%= @article.title %></h4></li>
+    <li>更新日時：<%= @article.created_at.strftime('%Y年%-m月%-d日 %-H時%-M分%-S秒') %></li>
+    <li>カテゴリー：<%= @article.category %></li>
+    <li>書いた人：<%= @article.user.nickname %></li>
+    <li>記事の状態：<%= @article.state %></li>
+    <% if user_signed_in? && current_user.id == @article.user_id %>
+      <li><%= link_to '編集', "/articles/#{@article.id}/edit" %></li>
+      <li><%= link_to '削除', "/articles/#{@article.id}", method: :delete %></li>
+    <% end %>
+  </ul>
   <section>
     <%= @article.article %>
   </section>
 </article>
 
+<レビューする>
 <%= form_for [@article, @comment] do |f| %>
-  <h4><%= f.label :nickname, '投稿者:' %></h4>
-  <h4><%= f.text_field :nickname %></h4>
-  <h4><%= f.label :text, '本文' %></h4>
-  <h4><%= f.text_area :text %></h4>
-  <h4><%= f.submit '投稿する' %></h4>
+  <%= f.label :nickname, '投稿者：' %>
+  <%= f.text_field :nickname %><br>
+  <%= f.label :text, '本文：' %><br>
+  <%= f.text_area :text %><br>
+  <%= f.submit '送信する' %><br><br>
 <% end %>
 
 <% unless @comments.count == 0 %>
-  <h4><コメント一覧></h4>
+  <コメント一覧><br>
   <% if @comments %>
     <% @comments.each do |comment| %>
-      <h4>投稿時間: <%= comment.created_at.strftime('%Y年%-m月%-d日 %-H時%-M分%-S秒')%></h4>
-      <h4>投稿者: <%= comment.nickname %></h4>
-      <%= simple_format(comment.text) %>
+      投稿時間： <%= comment.created_at.strftime('%Y年%-m月%-d日 %-H時%-M分%-S秒')%><br>
+      投稿者： <%= comment.nickname %><br>
+      内容：<br>
+      <%= simple_format(comment.text) %><br><br>
     <% end %>
   <% end %>
 <% end %>
