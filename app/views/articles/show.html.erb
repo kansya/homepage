@@ -1,5 +1,5 @@
 <article>
-  <h4>更新日時：<%= @article.created_at %></h4>
+  <h4>更新日時：<%= @article.created_at.strftime('%Y年%-m月%-d日 %-H時%-M分%-S秒') %></h4>
   <h1>タイトル：<%= @article.title %></h1>
   <h3>カテゴリー：<%= @article.category %></h3>
   <h4>書いた人：<%= @article.user.nickname %></h4>
@@ -23,7 +23,7 @@
   <h4><コメント一覧></h4>
   <% if @comments %>
     <% @comments.each do |comment| %>
-      <h4>投稿時間: <%= comment.created_at %></h4>
+      <h4>投稿時間: <%= comment.created_at.strftime('%Y年%-m月%-d日 %-H時%-M分%-S秒')%></h4>
       <h4>投稿者: <%= comment.nickname %></h4>
       <%= simple_format(comment.text) %>
     <% end %>
