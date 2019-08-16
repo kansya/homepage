@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190816054857) do
+ActiveRecord::Schema.define(version: 20190816061347) do
 
   create_table "articles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "title"
-    t.text "article"
-    t.string "category"
-    t.integer "state"
+    t.string "title", null: false
+    t.text "article", null: false
+    t.string "category", null: false
+    t.integer "state", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
@@ -25,10 +25,10 @@ ActiveRecord::Schema.define(version: 20190816054857) do
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "article_id"
-    t.text "text"
+    t.text "text", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "nickname"
+    t.string "nickname", null: false
     t.index ["article_id"], name: "index_comments_on_article_id"
   end
 
