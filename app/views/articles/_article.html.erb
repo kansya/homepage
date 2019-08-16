@@ -3,7 +3,7 @@
     <li><h4>タイトル： <%= article.title %></h4></li>
     <li>更新日時：<%= article.created_at.strftime('%Y年%-m月%-d日 %-H時%-M分%-S秒') %></li>
     <li>カテゴリー：<%= article.category %></li>
-    <li>書いた人：<%= article.user.nickname %></li>
+    <li>作成者：<%= article.user.nickname %></li>
     <li>記事の状態：<%= article.state %></li>
     <li><%= link_to '詳細', "/articles/#{article.id}" %></li>
     <% if user_signed_in? && current_user.id == article.user_id %>
