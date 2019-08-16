@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :move_to_index, except: [:index, :show]
+  before_action :move_to_index, except: [:index, :show, :list, :history]
 
   def index
     @articles = Article.includes(:user).page(params[:page]).per(3).order("created_at DESC")
@@ -39,6 +39,14 @@ class ArticlesController < ApplicationController
       article.update(create_params)
     end
     redirect_to articles_path
+  end
+
+  def list
+    @articles = Article.all.order("category")
+  end
+
+  def history
+    @articles = Article.all.order("created_at DESC")
   end
 
   private

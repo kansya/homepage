@@ -23,8 +23,14 @@
             <%= link_to(articles_path) do %>
               <li>トップページ</li>
             <% end %>
-            <li>記事一覧(カテゴリ別)</li>
-            <li>更新履歴一覧</li>
+            <li>
+              <%= link_to "記事一覧(カテゴリ別)", list_articles_path %>
+            </li>
+
+            <li>
+              <%= link_to "更新履歴一覧", history_articles_path %>
+            </li>
+
             <li>サイト内検索</li>
             <li>管理人プロフィール</li>
 
