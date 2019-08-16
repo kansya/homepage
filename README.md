@@ -1,24 +1,42 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# ruby version
+## ruby 2.3.1p112
 
-Things you may want to cover:
+# DB設計
 
-* Ruby version
+## articlesテーブル
 
-* System dependencies
+|Column|Type|Options|
+|------|----|-------|
+|title|string|null: false|
+|article|text|null: false|
+|category|string|null: false|
+|state|integer|null: false|
+|user_id|references|null: false, foreign_key: true|
 
-* Configuration
+### Association
+- belongs_to :user
+- has_many :comments
 
-* Database creation
+## usersテーブル
 
-* Database initialization
+|Column|Type|Options|
+|------|----|-------|
+|email|string|null: false|
+|password|string|null: false|
+|nickname|string|null: false|
 
-* How to run the test suite
+### Association
+- has_many :articles
 
-* Services (job queues, cache servers, search engines, etc.)
+## commentsテーブル
 
-* Deployment instructions
+|Column|Type|Options|
+|------|----|-------|
+|text|text|null: false|
+|nickname|string|null: false|
+|article_id|references|null: false, foreign_key: true|
 
-* ...
+### Association
+- belongs_to :article
