@@ -58,3 +58,9 @@ gem 'devise'
 
 #ページネーション機能をインストール
 gem 'kaminari'
+
+#markdown形式で入力した文字列を表示する
+gem 'redcarpet', '~> 2.3.0'
+
+#シンタックスハイライトに対応させる
+gem 'coderay'
