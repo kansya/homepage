@@ -1,6 +1,6 @@
 <article>
   <ul>
-    <li><h4>タイトル： <%= article.title %></h4></li>
+    <li><h4>タイトル：<%= article.title %></h4></li>
     <li>更新日時：<%= article.created_at.strftime('%Y年%-m月%-d日 %-H時%-M分%-S秒') %></li>
     <li>カテゴリー：<%= article.category %></li>
     <li>作成者：<%= article.user.nickname %></li>
