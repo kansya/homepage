@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :articles do
     
     collection do
-      get :list, :history
+      get :list
     end
 
     resources :comments, only: [:create]
