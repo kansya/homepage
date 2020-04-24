@@ -10,13 +10,13 @@ $ ruby 2.3.1p112 (2016-04-26 revision 54768) [x86_64-darwin17]
 $ bundler -v
 $ Bundler version 1.17.1
 
-# 新規作成
+#新規作成
 $ rails _5.2.1_ new project_name -d mysql
 
-# gem導入
+#gem導入
 $ bundle install
 
-# DB導入
+#DB導入
 $ rake db:create
 
 #コントローラー作成
